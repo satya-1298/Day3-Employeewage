@@ -12,20 +12,28 @@ namespace EmployeeWages
 
         public void Display()
         {
-
+            int Full_Day_Hours = 1;
+            int Wage_Per_Day = 20;
+            int Emp_Hrs = 0;
+            int Wages = 0;  
             Random random = new Random();
-            int attendent = random.Next(2);
+            int attendent = random.Next(3);
             Console.WriteLine(attendent);
-            if (attendent == 0)
+            if (attendent == Full_Day_Hours)
             {
-                Console.WriteLine("Employee Absent");
+                Emp_Hrs = 8;
+                Console.WriteLine("Employee Present");
 
             }
             else
             {
-                Console.WriteLine("Employee Present");
+                Emp_Hrs = 0;
+                Console.WriteLine("Employee Absent");
 
             }
+            Wages = Emp_Hrs * Wage_Per_Day;
+            Console.WriteLine("Employee Wages are : " + Wages);
+           
         }
     }
 }
