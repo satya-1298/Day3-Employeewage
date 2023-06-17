@@ -12,18 +12,23 @@ namespace EmployeeWages
 
         public void Display()
         {
-            int Full_Day_Hours = 1;
+            int Full_Day_Hours = 8;
             int Wage_Per_Day = 20;
             int Emp_Hrs = 0;
             int Wages = 0;  
             Random random = new Random();
             int attendent = random.Next(3);
             Console.WriteLine(attendent);
-            if (attendent == Full_Day_Hours)
+            if (attendent ==1 )
             {
                 Emp_Hrs = 8;
                 Console.WriteLine("Employee Present");
 
+            }
+            else if(attendent==2)
+            {
+                Emp_Hrs = 4;
+                Console.WriteLine("Employee is Part_Timer");
             }
             else
             {
