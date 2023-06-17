@@ -8,9 +8,12 @@ namespace EmployeeWages
 {
     public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Employee Wage Program");
+            EmployeeInfo employeeInfo = new EmployeeInfo();
+            employeeInfo.Display();
+            Console.ReadLine();
         }
     }
 }
