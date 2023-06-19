@@ -12,31 +12,50 @@ namespace EmployeeWages
 
         public void Display()
         {
-            int EmpHrs = 0;
+            int Total_Wage = 0;
+            int Emp_Hours = 0;
             int wage = 0;
+            int days = 0;
+            int Total_Hours = 0;
             int Wage_Per_Hour = 20;
-            int Full_Day_Hours = 8;
-            int Part_Time_Hours = 4;
+            //int Full_Day_Hours = 8;
+            //int Part_Time_Hours = 4;
             int Monthly_Days = 20;
+            int Max_Hours = 100;
             Random random = new Random();
-            int attendent = random.Next(3);
-            Console.WriteLine(attendent);
+            while (days <= Monthly_Days && Total_Hours < Max_Hours)
+            {
+                int attendent = random.Next(3);
+                Console.WriteLine(attendent);
+
                 switch (attendent)
                 {
                     case 1:
                         Console.WriteLine("Full_Timer");
-                    EmpHrs = 8;
+                        Emp_Hours = 8;
+
                         break;
                     case 2:
                         Console.WriteLine("Part_Timer");
-                    EmpHrs = 4;
+                        Emp_Hours = 4;
                         break;
-                    default: Console.WriteLine("Employee absent");
-                    break;
-
+                    default:
+                        Console.WriteLine("Employee Absent");
+                        Emp_Hours = 0;
+                        break;
                 }
-            wage = EmpHrs * Wage_Per_Hour * Monthly_Days;
-                Console.WriteLine("Daily Wages of Employee : " + wage);           
+                days++;
+                Console.WriteLine("Days are  " + days);
+                Total_Hours += Emp_Hours;
+                wage = Emp_Hours * Wage_Per_Hour;
+                Total_Wage = Total_Wage + wage;
+                Console.WriteLine("Employee wages  = " + wage);
+                Console.WriteLine(" employee  Hours = " + Total_Hours);
+                Console.WriteLine("Total Employee wage  = " + Total_Wage);
+                Console.WriteLine("\n");
+            }
+            Console.WriteLine(" Monthly Wages of Employee : " + Total_Wage);
+
         }
     }
 }
