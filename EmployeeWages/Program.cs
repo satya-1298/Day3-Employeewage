@@ -14,11 +14,7 @@ namespace EmployeeWages
             EmployeeInfo employeeInfo = new EmployeeInfo();
             employeeInfo.Display();
 
-            //UC4
-
-            SwitchCase switchCase = new SwitchCase();
-
-            switchCase.EmpWages();
+           
             Console.ReadLine();
         }
     }
