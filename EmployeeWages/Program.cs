@@ -13,6 +13,12 @@ namespace EmployeeWages
             Console.WriteLine("Welcome to Employee Wage Program");
             EmployeeInfo employeeInfo = new EmployeeInfo();
             employeeInfo.Display();
+
+            //UC4
+
+            SwitchCase switchCase = new SwitchCase();
+
+            switchCase.EmpWages();
             Console.ReadLine();
         }
     }
