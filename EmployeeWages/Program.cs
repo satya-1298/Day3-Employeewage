@@ -11,8 +11,8 @@ namespace EmployeeWages
         public static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Employee Wage Program");
-            EmployeeInfo employeeInfo = new EmployeeInfo();
-            employeeInfo.Display();
+            //EmployeeInfo employeeInfo = new EmployeeInfo();
+            EmployeeInfo.Display();
 
            
             Console.ReadLine();

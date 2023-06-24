@@ -10,7 +10,7 @@ namespace EmployeeWages
     {
 
 
-        public void Display()
+        public static void Display()
         {
             int Total_Wage = 0;
             int Emp_Hours = 0;
@@ -23,7 +23,7 @@ namespace EmployeeWages
             int Monthly_Days = 20;
             int Max_Hours = 100;
             Random random = new Random();
-            while (days <= Monthly_Days && Total_Hours < Max_Hours)
+            while (days < Monthly_Days && Total_Hours < Max_Hours)
             {
                 int attendent = random.Next(3);
                 Console.WriteLine(attendent);
