@@ -10,37 +10,34 @@ namespace EmployeeWages
     {
 
 
-        public static void Display(string company, int wage_Per_Hour, int daily_Hours, int monthly_WorkDays)
+        public void Display()
         {
-            int daily_Wage = 0;
-            int montly_Wage = 0;
-            int emp_Hours = 0;
+            int EmpHrs = 0;
+            int wage = 0;
+            int Wage_Per_Hour = 20;
+            int Full_Day_Hours = 8;
+            int Part_Time_Hours = 4;
+            int Monthly_Days = 20;
             Random random = new Random();
             int attendent = random.Next(3);
             Console.WriteLine(attendent);
-
             switch (attendent)
             {
                 case 1:
                     Console.WriteLine("Full_Timer");
-                    emp_Hours = 8;
-
+                    EmpHrs = 8;
                     break;
                 case 2:
                     Console.WriteLine("Part_Timer");
-                    emp_Hours = 4;
+                    EmpHrs = 4;
                     break;
                 default:
-                    Console.WriteLine("Employee Absent");
-                    emp_Hours = 0;
+                    Console.WriteLine("Employee absent");
                     break;
-            }
-            daily_Wage = wage_Per_Hour * daily_Hours;
-            int monthly_wage = daily_Wage * monthly_WorkDays;
-            Console.WriteLine("Daily wages of {0} ",company+" Employes is " +daily_Wage);
-            Console.WriteLine("Monthly wages of {0} ", company + " Employes is " + monthly_wage);
-            
 
-        }  
+            }
+            wage = EmpHrs * Wage_Per_Hour;
+            Console.WriteLine("Daily Wages of Employee : " + wage);
+        }
     }
 }
