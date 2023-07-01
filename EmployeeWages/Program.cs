@@ -22,6 +22,8 @@ namespace EmployeeWages
             Console.WriteLine(employeeInfo_one.SaveWage());
             employeeInfo_two.calculateWage();
             Console.WriteLine(employeeInfo_two.SaveWage());
+            employeeInfo.SaveWage();
+
             Console.ReadLine();
         }
     }
