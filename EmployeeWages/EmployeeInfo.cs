@@ -8,36 +8,46 @@ namespace EmployeeWages
 {
     public class EmployeeInfo
     {
-
-
-        public void Display()
+        const int IS_FULL_TIME = 1, IS_PART_TIME = 2;
+        private String company;
+        private int wagePerHr;
+        private int noOfDays;
+        private int maxHrs;
+        private int fullTimeHr;
+        private int partTimeHr;
+        private int totalWage;
+        public EmployeeInfo(String company, int wagePerHr, int noOfDays, int maxHrs, int fullTimeHr, int partTimeHr)
         {
-            int EmpHrs = 0;
-            int wage = 0;
-            int Wage_Per_Hour = 20;
-            int Full_Day_Hours = 8;
-            int Part_Time_Hours = 4;
-            int Monthly_Days = 20;
+            this.company = company;
+            this.wagePerHr = wagePerHr;
+            this.noOfDays = noOfDays;
+            this.maxHrs = maxHrs;
+            this.fullTimeHr = fullTimeHr;
+            this.partTimeHr = partTimeHr;
+        }
+        public void calculateWage()
+        {
+            int wage = 0, totalHrs = 0;
             Random random = new Random();
-            int attendent = random.Next(3);
-            Console.WriteLine(attendent);
-            switch (attendent)
+            for (int day = 0; day < this.noOfDays && totalHrs < this.maxHrs; day++)
             {
-                case 1:
-                    Console.WriteLine("Full_Timer");
-                    EmpHrs = 8;
-                    break;
-                case 2:
-                    Console.WriteLine("Part_Timer");
-                    EmpHrs = 4;
-                    break;
-                default:
-                    Console.WriteLine("Employee absent");
-                    break;
-
+                int check = random.Next(0, 3);
+                switch (check)
+                {
+                    case IS_FULL_TIME:
+                        totalHrs += this.fullTimeHr;
+                        break;
+                    case IS_PART_TIME:
+                        totalHrs += this.partTimeHr;
+                        break;
+                }
             }
-            wage = EmpHrs * Wage_Per_Hour;
-            Console.WriteLine("Daily Wages of Employee : " + wage);
+            totalWage = this.wagePerHr * totalHrs;
+            Console.WriteLine("Monthly wage of an employee in " + company + " is " + totalWage);
+        }
+        public string SaveWage()
+        {
+            return "monthly wage of an employee in " + this.company + " is " + this.totalWage;
         }
     }
 }
